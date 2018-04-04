@@ -24,6 +24,10 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+share/
+
+# local config
+config/settings/local.py
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -284,5 +288,4 @@ pip-selfcheck.json
 
 
 MyAnonymousDiary/media/
-
 

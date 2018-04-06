@@ -1,6 +1,9 @@
 .header {
   .logo {
     font-family: $logofont;
-    font-size: 44px;
+    font-size: 65px;
+    border: 1px solid $black;
+    color: transparent;
+    line-height: 1em;
   }
 }

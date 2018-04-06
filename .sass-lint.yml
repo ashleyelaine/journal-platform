@@ -18,6 +18,8 @@ rules:
   placeholder-in-extend: 0
   property-sort-order: 0
   final-newline: 0
+  no-trailing-whitespace: 0
+  empty-line-between-blocks: 0
 
   # Currently disabled to allow for defining multiple fallback rules when
   # browsers don't support a given feature (viewport, for example).

@@ -1,0 +1,15 @@
+.footer {
+  > .container {
+    display: flex;
+    justify-content: flex-end;
+  } 
+
+  .footer-logo {
+    font-family: $logofont;
+    font-size: 81px;
+    display: inline-block;
+    border: 1px solid $black;
+    color: transparent;
+    line-height: 1em;
+  }
+}

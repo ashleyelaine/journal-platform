@@ -7,5 +7,19 @@
   <div class="container">
       <h1>HOME</h1>
       <p>Use this document as a way to quick start any new project.</p>
+
+      ENTRIES
+      {% include "../entries/entry_list.html" %}
+
+
+
+
+      {% for entry in entries %}
+          <div>
+              <p>published: {{ entry.published_date }}</p>
+              <h1><a href="">{{ entry.title }}</a></h1>
+              <p>{{ entry.text|linebreaksbr }}</p>
+          </div>
+      {% endfor %}
   </div>
 {% endblock content %}

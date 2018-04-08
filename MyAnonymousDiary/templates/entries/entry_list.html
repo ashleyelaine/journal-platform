@@ -1,0 +1,8 @@
+hello
+{% for entry in entries %}
+    <div>
+        <p>published: {{ entry.published_date }}</p>
+        <h1><a href="">{{ entry.title }}</a></h1>
+        <p>{{ entry.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}

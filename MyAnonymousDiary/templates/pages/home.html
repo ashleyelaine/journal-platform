@@ -9,7 +9,6 @@
       <p>Use this document as a way to quick start any new project.</p>
 
       ENTRIES
-      {% include "../entries/entry_list.html" %}
 
 
 
@@ -21,5 +20,14 @@
               <p>{{ entry.text|linebreaksbr }}</p>
           </div>
       {% endfor %}
+
+
+
+      {% for entry in object_list %}<br />
+
+   
+      <h1><a href="">{{ entry.title }}</a></h1>
+      <p>{{ entry.text|linebreaksbr }}</p>
+  {% endfor %}
   </div>
 {% endblock content %}

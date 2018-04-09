@@ -1,8 +1,10 @@
-from django.shortcuts import render
+from django.contrib.sites.models import Site
+from django.views.generic import ListView
 from django.utils import timezone
 from .models import Entry
 
-# Create your views here.
-def entry_list(request):
-    entries = Entry.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-    return render(request, 'pages/home.html', {'entries': entries})
+# ENTRY LIST VIEW
+class EntryListView(ListView):
+  def get_queryset(self):
+    queryset = Entry.objects.all()
+    return queryset

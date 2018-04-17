@@ -1,0 +1,20 @@
+entry edit?
+{% extends "base.html" %}
+{% load i18n bootstrap4 %}
+
+{% block content %}
+<div class="box">
+  <div class="content-header">
+    <h1>Edit Student: {{ student }} <a href="" class="btn btn-back">cancel</a></h1>
+  </div>
+
+  <form method="POST"{% if form.is_multipart %} enctype="multipart/form-data"{% endif %}>
+    {% bootstrap_form form %}
+
+    {% csrf_token %}
+    {% buttons %}
+      {% bootstrap_button _("Save") button_type="submit" button_class="btn-primary" %}
+    {% endbuttons %}
+  </form>
+</div>
+{% endblock %}

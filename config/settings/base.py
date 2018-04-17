@@ -68,12 +68,13 @@ THIRD_PARTY_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'rest_framework',
+    'bootstrap4',
 ]
 LOCAL_APPS = [
     'MyAnonymousDiary.users.apps.UsersConfig',
     'MyAnonymousDiary.entries.apps.EntriesConfig',
-    # Your stuff: custom apps go here
 ]
+
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 

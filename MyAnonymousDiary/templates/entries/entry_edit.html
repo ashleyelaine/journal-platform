@@ -1,11 +1,10 @@
-entry edit?
 {% extends "base.html" %}
 {% load i18n bootstrap4 %}
 
 {% block content %}
 <div class="box">
   <div class="content-header">
-    <h1>Edit Student: {{ student }} <a href="" class="btn btn-back">cancel</a></h1>
+    <h1>Edit Entry: <a href="{% url 'entry_detail' pk=entry.pk %}" class="btn btn-back">cancel</a></h1>
   </div>
 
   <form method="POST"{% if form.is_multipart %} enctype="multipart/form-data"{% endif %}>

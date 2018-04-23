@@ -3,7 +3,7 @@ from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy
 from django.utils.translation import ugettext as _, ugettext_lazy as _l
 from django.utils import timezone
-from django.views.generic import ListView, DetailView, UpdateView
+from django.views.generic import ListView, DetailView, UpdateView, CreateView
 from .models import Entry
 
 # ENTRY LIST VIEW
@@ -28,5 +28,14 @@ class EntryUpdateView(UpdateView):
     model = Entry
     fields = ('title', 'text')
     template_name = 'entries/entry_edit.html'
-    success_url = reverse_lazy('entry_detail')
+
+    def get_success_url(self):
+        return reverse_lazy('entry_detail', args=[self.get_object().pk])
+
     success_message = _('The entry has been updated')
+
+# ENTRY CREATE VIEW
+class EntryCreateView(CreateView):
+    model = Entry
+    fields = ('title', 'text', 'published_date')
+    template_name = 'entries/entry_create.html'

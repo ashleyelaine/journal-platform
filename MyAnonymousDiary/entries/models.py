@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from django.template.defaultfilters import slugify
 
 
 class Entry(models.Model):
@@ -8,14 +9,25 @@ class Entry(models.Model):
 
   author = models.ForeignKey('users.User', on_delete=models.CASCADE)
   title = models.CharField(max_length=200)
-  text = models.TextField()
+  content = models.TextField()
+  slug = models.SlugField(default='', blank=True, null=True)
   created_date = models.DateTimeField(default=timezone.now)
   published_date = models.DateTimeField(blank=True, null=True) 
 
   def publish(self):
     self.published_date = timezone.now()
+    self.slug = slugify(self.title)
     self.save()
 
   def __str__(self):
     return self.title
+
+  def save(self, *args, **kwargs):
+    self.slug = slugify(self.title)
+    super().save(*args, **kwargs)
+
+  # def get_absolute_url(self):
+  #   kwargs = {'slug': self.slug,
+  #             'pk': self.pk}
+  #   return reverse('entry_detail', kwargs=kwargs)
         

@@ -37,9 +37,16 @@ class EntryUpdateView(UpdateView):
         return reverse_lazy('entry_detail', args=[self.get_object().pk])
 
 # ENTRY CREATE VIEW
-class EntryCreateView(TemplateView):
+class EntryCreateView(CreateView):
+    model = Entry
+    fields = ['title', 'content', 'author']
     template_name = 'entries/entry_create.html'
-    
+    success_message = _('The entry has been added')
 
+    def get_success_url(self):
+        messages.success(self.request, self.success_message)
+        return reverse_lazy('new_entry')
+    
+# ENTRY DELETE VIEW
     
     

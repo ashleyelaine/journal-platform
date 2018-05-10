@@ -20,7 +20,7 @@
         {% for entry in object_list %}<br />
             <p>published: {{ entry.published_date }}</p>
             <h1><a href="{% url 'entry_detail' pk=entry.pk %}">{{ entry.title }}</a></h1>
-            <p>{{ entry.text|truncatechars:255|striptags }}</p>
+            <p>{{ entry.content|truncatechars:255|striptags }}</p>
         {% endfor %}
   </div>
 {% endblock content %}

@@ -1,1 +1,15 @@
-What's up
+{% extends "base.html" %}
+{% load i18n bootstrap4 %}
+
+{% block content %}
+<div class="box">
+  <div class="content-header">
+    <h1>Add Entry</h1>
+  </div>
+
+  <form method="post">{% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" value="Save" />
+  </form>
+</div>
+{% endblock %}

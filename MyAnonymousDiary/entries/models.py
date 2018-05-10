@@ -25,9 +25,4 @@ class Entry(models.Model):
   def save(self, *args, **kwargs):
     self.slug = slugify(self.title)
     super().save(*args, **kwargs)
-
-  # def get_absolute_url(self):
-  #   kwargs = {'slug': self.slug,
-  #             'pk': self.pk}
-  #   return reverse('entry_detail', kwargs=kwargs)
         

@@ -6,8 +6,9 @@
 {% block content %}
   <div class="container">
       <h1>{{ entry.title }}</h1>
-      <p>published: {{ entry.published_date }}</p>
+      <p>By: {{ entry.author }}</p>
+      <p>published: {{ entry.created_date }}</p>
       <a class="btn" href="{% url 'edit_entry' pk=entry.pk %}">Edit</a>
-      <p>{{ entry.text|safe }}</p>
+      <p>{{ entry.content|safe }}</p>
   </div>
 {% endblock content %}

@@ -4,7 +4,7 @@ from django.conf.urls import url, re_path, include
 from .views import EntryDetailView, EntryUpdateView, EntryCreateView
 
 urlpatterns = [
-  url(r'^entry/create/$', EntryCreateView.as_view(), name='edit_entry'),
+  url(r'^entry/new/$', EntryCreateView.as_view(), name='new_entry'),
   url(r'^entry/(?P<pk>[^/]+)/$', EntryDetailView.as_view(), name='entry_detail'),
   url(r'^entry/(?P<pk>[^/]+)/edit/$', EntryUpdateView.as_view(), name='edit_entry'),
   url(r'^summernote/', include('django_summernote.urls')),

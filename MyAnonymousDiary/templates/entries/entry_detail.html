@@ -5,10 +5,20 @@
 
 {% block content %}
   <div class="container">
+    {% if entry.author == request.user or entry.public == True %}
+
       <h1>{{ entry.title }}</h1>
       <p>By: {{ entry.author }}</p>
       <p>published: {{ entry.created_date }}</p>
-      <a class="btn" href="{% url 'edit_entry' pk=entry.pk %}">Edit</a>
+      {% if entry.author == request.user %}
+        <a class="btn" href="{% url 'edit_entry' pk=entry.pk %}">Edit</a>
+        {% endif %}
       <p>{{ entry.content|safe }}</p>
+
+    {% else %}
+
+      <p>Sorry this post is private.</p>
+    
+    {% endif %}
   </div>
 {% endblock content %}

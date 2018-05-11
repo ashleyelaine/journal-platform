@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy
 from django.utils.translation import ugettext as _, ugettext_lazy as _l
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils import timezone
 from django.views.generic import ListView, DetailView, UpdateView, CreateView, TemplateView
 from .forms import EntryForm
@@ -11,7 +12,7 @@ from .models import Entry
 # ENTRY LIST VIEW / HOME?
 class EntryListView(ListView):
   def get_queryset(self):
-    queryset = Entry.objects.all()
+    queryset = Entry.objects.is_public()
     return queryset
 
 
@@ -26,7 +27,7 @@ class EntryDetailView(DetailView):
 
 
 # ENTRY UPDATE VIEW
-class EntryUpdateView(UpdateView):
+class EntryUpdateView(LoginRequiredMixin, UpdateView):
     model = Entry
     form_class = EntryForm
     template_name = 'entries/entry_edit.html'
@@ -36,17 +37,22 @@ class EntryUpdateView(UpdateView):
         messages.success(self.request, self.success_message)
         return reverse_lazy('entry_detail', args=[self.get_object().pk])
 
+
 # ENTRY CREATE VIEW
-class EntryCreateView(CreateView):
+class EntryCreateView(LoginRequiredMixin, CreateView):
     model = Entry
-    fields = ['title', 'content', 'author']
+    form_class = EntryForm
     template_name = 'entries/entry_create.html'
     success_message = _('The entry has been added')
 
     def get_success_url(self):
         messages.success(self.request, self.success_message)
         return reverse_lazy('new_entry')
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
+
     
 # ENTRY DELETE VIEW
-    
-    

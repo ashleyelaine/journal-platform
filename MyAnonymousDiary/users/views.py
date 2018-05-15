@@ -3,6 +3,7 @@ from django.urls import reverse
 from django.views.generic import DetailView, ListView, RedirectView, UpdateView
 
 from .models import User
+from entries.models import Entry
 
 
 class UserDetailView(LoginRequiredMixin, DetailView):
@@ -11,13 +12,23 @@ class UserDetailView(LoginRequiredMixin, DetailView):
     slug_field = 'username'
     slug_url_kwarg = 'username'
 
+    def get_context_data(self, **kwargs):
+        context = super(UserDetailView, self).get_context_data(**kwargs)
+        username = self.kwargs['username']
+        entries_all = Entry.objects.filter(author__username = username)
+        entries_all_published = entries_all.is_public().is_not_draft().is_not_update()
+        entries_all_drafts = entries_all.is_draft().is_not_update()
+        context['user_entries'] = entries_all
+        context['user_entries_drafts'] = entries_all_drafts
+        context['user_entries_published'] = entries_all_published
+        return context
+
 
 class UserRedirectView(LoginRequiredMixin, RedirectView):
     permanent = False
 
     def get_redirect_url(self):
-        return reverse('users:detail',
-                       kwargs={'username': self.request.user.username})
+        return reverse('users:detail', kwargs={'username': self.request.user.username})
 
 
 class UserUpdateView(LoginRequiredMixin, UpdateView):
@@ -29,8 +40,7 @@ class UserUpdateView(LoginRequiredMixin, UpdateView):
 
     # send the user back to their own page after a successful update
     def get_success_url(self):
-        return reverse('users:detail',
-                       kwargs={'username': self.request.user.username})
+        return reverse('users:detail', kwargs={'username': self.request.user.username})
 
     def get_object(self):
         # Only get the User record for the user making the request

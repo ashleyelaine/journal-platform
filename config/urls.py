@@ -7,11 +7,12 @@ from django.views import defaults as default_views
 
 from entries.views import (
     EntryListView,
+    UpdatesListView
 )
 
 urlpatterns = [
-    url(r'^$', EntryListView.as_view(template_name='pages/home.html'), name='home'),
-    url(r'^about/$', TemplateView.as_view(template_name='pages/about.html'), name='about'),
+    url(r'^$', EntryListView.as_view(), name='home'),
+    url(r'^updates/$', UpdatesListView.as_view(), name='updates'),
 
     # Django Admin, use {% url 'admin:index' %}
     url(settings.ADMIN_URL, admin.site.urls),

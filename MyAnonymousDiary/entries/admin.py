@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 
 class EntryAdmin(SummernoteModelAdmin, admin.ModelAdmin):
     summernote_fields = ('content',)
-    list_display = ('title', 'author', 'active', 'public', 'draft')
+    list_display = ('title', 'author', 'active', 'public', 'draft', 'update')
     search_fields =  ['title','author__username']
 
 admin.site.register(Entry, EntryAdmin)

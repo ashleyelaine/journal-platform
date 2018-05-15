@@ -5,9 +5,17 @@ from entries.models import Entry
 
 
 class EntryForm(forms.ModelForm):
-  class Meta:
-      model = Entry
-      fields = ('title', 'content')
-      widgets = {
-        'content': SummernoteWidget(),
-      }
+    class Meta:
+        model = Entry
+        fields = ('title', 'content', 'public')
+        widgets = {
+            'content': SummernoteWidget(),
+        }
+
+class EntryFormSuper(forms.ModelForm):
+    class Meta:
+        model = Entry
+        fields = ('title', 'content', 'public', 'update')
+        widgets = {
+            'content': SummernoteWidget(),
+        }

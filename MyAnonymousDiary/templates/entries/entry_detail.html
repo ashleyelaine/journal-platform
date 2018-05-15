@@ -10,8 +10,9 @@
       <h1>{{ entry.title }}</h1>
       <p>By: {{ entry.author }}</p>
       <p>published: {{ entry.created_date }}</p>
-      {% if entry.author == request.user %}
-        <a class="btn" href="{% url 'edit_entry' pk=entry.pk %}">Edit</a>
+        {% if entry.author == request.user %}
+            <a class="btn" href="{% url 'edit_entry' pk=entry.pk %}">Edit</a>
+            <a class="btn" href="{% url 'delete_entry' pk=entry.pk %}">Delete</a>
         {% endif %}
       <p>{{ entry.content|safe }}</p>
 

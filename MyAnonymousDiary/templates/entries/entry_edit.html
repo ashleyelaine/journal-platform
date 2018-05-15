@@ -7,12 +7,17 @@
     <h1>Edit Entry: <a href="{% url 'entry_detail' pk=entry.pk %}" class="btn btn-back">cancel</a></h1>
   </div>
 
-  <form method="POST"{% if form.is_multipart %} enctype="multipart/form-data"{% endif %}>
+  <form method="POST">
     {% bootstrap_form form %}
-
+   
     {% csrf_token %}
     {% buttons %}
-      {% bootstrap_button _("Save") button_type="submit" button_class="btn-primary" %}
+        {% if form.instance.draft == True %}
+            {% bootstrap_button _("Save Draft") button_type="submit" button_class="btn-primary" name="save_as_draft" %}
+            {% bootstrap_button _("Publish") button_type="submit" button_class="btn-primary" name="publish" %}
+        {% else %}
+            {% bootstrap_button _("Save") button_type="submit" button_class="btn-primary" name="save" %}
+        {% endif %}
     {% endbuttons %}
   </form>
 </div>

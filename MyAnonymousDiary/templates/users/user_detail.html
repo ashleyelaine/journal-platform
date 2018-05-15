@@ -29,6 +29,13 @@
 
 </div>
 <!-- End Action buttons -->
+<!-- {% for entry in entries_by_user %}<br />
+        <p>PUBLISHED: {{ entry.published_date }}</p>
+        <p>AUTHOR: {{ entry.author }}</p>
+        <h1><a href="{% url 'entry_detail' pk=entry.pk %}">{{ entry.title }}</a></h1>
+        <p>{{ entry.content|truncatechars:255|striptags }}</p>
+    {% endfor %} -->
+
 {% endif %}
 
 

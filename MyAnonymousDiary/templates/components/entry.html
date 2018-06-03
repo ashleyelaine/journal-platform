@@ -1,0 +1,6 @@
+<article class="entry">
+    <h3><a href="{% url 'entry_detail' pk=entry.pk %}">{{ entry.title }}</a></h3>
+    <p>{{ entry.content|truncatechars:255|striptags }}</p>
+    <span><b>PUBLISHED</b>: {{ entry.published_date }}</span>
+    <span><b>AUTHOR</b>: {{ entry.author }}</span>
+</article>

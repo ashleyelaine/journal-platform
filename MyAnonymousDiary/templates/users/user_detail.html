@@ -28,33 +28,24 @@
   </div>
 
 </div>
+<br>
 <!-- End Action buttons -->
-{% for entry in user_entries %}<br />
-    <p>PUBLISHED: {{ entry.published_date }}</p>
-    <p>AUTHOR: {{ entry.author }}</p>
-    <h1><a href="{% url 'entry_detail' pk=entry.pk %}">{{ entry.title }}</a></h1>
-    <p>{{ entry.content|truncatechars:255|striptags }}</p>
+{% for entry in user_entries %}
+    {% include 'components/entry.html' %}
 {% endfor %}
 <hr>
 <h2>DRAFTS</h2>
-{% for entry in user_entries_drafts %}<br />
-    <p>PUBLISHED: {{ entry.published_date }}</p>
-    <p>AUTHOR: {{ entry.author }}</p>
-    <h1><a href="{% url 'entry_detail' pk=entry.pk %}">{{ entry.title }}</a></h1>
-    <p>{{ entry.content|truncatechars:255|striptags }}</p>
+{% for entry in user_entries_drafts %}
+    {% include 'components/entry.html' %}
 {% endfor %}
 
 {% endif %}
 
 <hr>
 <h2>PUBLISHED & PUBLIC</h2>
-{% for entry in user_entries_published %}<br />
-    <p>PUBLISHED: {{ entry.published_date }}</p>
-    <p>AUTHOR: {{ entry.author }}</p>
-    <h1><a href="{% url 'entry_detail' pk=entry.pk %}">{{ entry.title }}</a></h1>
-    <p>{{ entry.content|truncatechars:255|striptags }}</p>
+{% for entry in user_entries_published %}
+    {% include 'components/entry.html' %}
 {% endfor %}
-
 
 </div>
 {% endblock content %}

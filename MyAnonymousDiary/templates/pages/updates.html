@@ -6,12 +6,8 @@
 {% block content %}
   <div class="container">
       <h1>ALL UPDATES</h1>
-
-        {% for update in object_list %}<br />
-            <p>PUBLISHED: {{ update.published_date }}</p>
-            <p>AUTHOR: {{ update.author }}</p>
-            <h1><a href="{% url 'entry_detail' pk=update.pk %}">{{ update.title }}</a></h1>
-            <p>{{ update.content|truncatechars:255|striptags }}</p>
+        {% for entry in object_list %}
+            {% include 'components/entry.html' %}
         {% endfor %}
   </div>
 {% endblock content %}

@@ -4,17 +4,17 @@
 {% block maincontent_class %}home-content{% endblock %}
 
 {% block content %}
-    <div class="container">
+  <div class="container">
     <h1>HOME</h1>
     <hr>
     <h2>UPDATES</h2>
     {% for entry in updates_list %}
-        {% include 'components/entry.html' %}
+      {% include 'components/entry.html' %}
     {% endfor %}
     <hr>
     <h2>ENTRIES</h2>
     {% for entry in entry_list %}
-        {% include 'components/entry.html' %}
+      {% include 'components/entry.html' %}
     {% endfor %}
-    </div>
+  </div>
 {% endblock content %}

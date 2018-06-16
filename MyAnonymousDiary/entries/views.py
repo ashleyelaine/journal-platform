@@ -15,12 +15,12 @@ class EntryListView(ListView):
     context_object_name = 'entry_list'
 
     def get_queryset(self):
-        queryset = Entry.objects.is_public().is_not_update().is_not_draft()
+        queryset = Entry.objects.is_public().is_not_update().is_not_draft().order_by('published_date').reverse()
         return queryset
 
     def get_context_data(self, **kwargs):
         context = super(EntryListView, self).get_context_data(**kwargs)
-        updates = Entry.objects.is_public().is_update().is_not_draft().order_by('created_date').reverse()[:2]
+        updates = Entry.objects.is_public().is_update().is_not_draft().order_by('published_date').reverse()[:2]
         context['updates_list'] = updates
         return context
 
@@ -93,6 +93,7 @@ class EntryCreateView(LoginRequiredMixin, CreateView):
             form.instance.published_date = timezone.now()
 
         form.instance.author = self.request.user
+        form.instance.timezone = self.request.user.timezone
         return super().form_valid(form)
 
 

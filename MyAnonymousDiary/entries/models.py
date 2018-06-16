@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils import timezone
 from django.template.defaultfilters import slugify
+from timezone_field import TimeZoneField
+
 
 class EntryQuerySet(models.QuerySet):
     def is_public(self):
@@ -57,6 +59,7 @@ class Entry(models.Model):
     slug = models.SlugField(default='', blank=True, null=True)
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
+    timezone = TimeZoneField(default='America/Chicago')
     draft = models.BooleanField(default=False, verbose_name='Is draft')
     public = models.BooleanField(default=False, verbose_name='Is public')
     active = models.BooleanField(default=True, verbose_name='Is Active')

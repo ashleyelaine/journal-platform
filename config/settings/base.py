@@ -69,7 +69,8 @@ THIRD_PARTY_APPS = [
     'allauth.socialaccount',
     'rest_framework',
     'bootstrap4',
-    'django_summernote'
+    'django_summernote',
+    'timezone_field',
 ]
 LOCAL_APPS = [
     'MyAnonymousDiary.users.apps.UsersConfig',

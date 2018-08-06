@@ -1,10 +1,15 @@
 {% load tz %}
 
 <article class="entry">
-    <h3><a href="{% url 'entry_detail' pk=entry.pk %}">{{ entry.title }}</a></h3>
-    <p>{{ entry.content|truncatechars:255|striptags }}</p>
+  <h3><a href="{% url 'entry_detail' pk=entry.pk %}">{{ entry.title }}</a></h3>
+  <p>{{ entry.content|truncatechars:255|striptags }}</p>
+  {% if entry.published_date %}
     <span><b>PUBLISHED</b>: {{ entry.published_date|timezone:entry.timezone }}</span>
-    <span><b>CREATED</b>: {{ entry.created_date }}</span>
-    <span><b>AUTHOR</b>: {{ entry.author }}</span>
-    <span><b>TIMEZONE</b>: {{ entry.timezone }}</span>
+    <span><b>PUBLISHED</b>: {{ entry.published_date|timesince }} ago</span>
+  {% else %}
+    <b>DRAFT --- </b>
+  {% endif %}
+  <span><b>CREATED</b>: {{ entry.created_date }}</span>
+  <span><b>AUTHOR</b>: {{ entry.author }}</span>
+  <span><b>TIMEZONE</b>: {{ entry.timezone }}</span>
 </article>

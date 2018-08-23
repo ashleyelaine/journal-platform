@@ -1,11 +1,44 @@
 [[source]]
-url = "https://pypi.python.org/simple"
+url = "https://pypi.org/simple"
 verify_ssl = true
 name = "pypi"
 
 [packages]
+requests = "*"
+pytz = "*"
+awesome-slugify = "*"
+Pillow = "*"
+argon2-cffi = "*"
+whitenoise = "*"
+redis = "*"
+django = "*"
+django-environ = "*"
+django-model-utils = "*"
+django-allauth = "*"
+django-crispy-forms = "*"
+django-redis = "*"
+djangorestframework = "*"
+coreapi = "*"
+django-bootstrap4 = ">=0.0.2"
+django-summernote = "*"
+django-timezone-field = "*"
+django-gulp = "*"
 
 [dev-packages]
+Werkzeug = "*"
+ipdb = "*"
+Sphinx = "*"
+psycopg2-binary = "*"
+pytest = "*"
+pytest-sugar = "*"
+flake8 = "*"
+coverage = "*"
+factory-boy = "*"
+django-debug-toolbar = "*"
+django-extensions = "*"
+django-coverage-plugin = "*"
+pytest-django = "*"
+pylint = "*"
 
 [requires]
-python_version = "3.4"
+python_version = "3.7"

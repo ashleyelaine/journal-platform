@@ -5,7 +5,7 @@ from django.contrib import admin
 from django.views.generic import TemplateView
 from django.views import defaults as default_views
 
-from entries.views import (
+from MyAnonymousDiary.entries.views import (
     EntryListView,
     UpdatesListView
 )
@@ -22,7 +22,7 @@ urlpatterns = [
     url(r'^accounts/', include('allauth.urls')),
 
     # Entries
-    url(r'', include('entries.urls')),
+    url(r'', include('MyAnonymousDiary.entries.urls')),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

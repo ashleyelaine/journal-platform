@@ -23,6 +23,8 @@ django-bootstrap4 = ">=0.0.2"
 django-summernote = "*"
 django-timezone-field = "*"
 django-gulp = "*"
+dj-database-url = "*"
+behave-django = "*"
 
 [dev-packages]
 Werkzeug = "*"

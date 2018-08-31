@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.conf.urls.static import static
 from django.conf.urls import url, re_path, include
-from .views import EntryDetailView, EntryUpdateView, EntryCreateView, EntryDeleteView
+from MyAnonymousDiary.entries.views import EntryDetailView, EntryUpdateView, EntryCreateView, EntryDeleteView
 
 urlpatterns = [
   url(r'^entry/new/$', EntryCreateView.as_view(), name='new_entry'),

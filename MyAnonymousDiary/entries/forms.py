@@ -1,7 +1,7 @@
 from django import forms
 from django_summernote.widgets import SummernoteWidget
 
-from entries.models import Entry
+from MyAnonymousDiary.entries.models import Entry
 
 
 class EntryForm(forms.ModelForm):

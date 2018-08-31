@@ -3,7 +3,7 @@ from django.urls import reverse
 from django.views.generic import DetailView, ListView, RedirectView, UpdateView
 
 from .models import User
-from entries.models import Entry
+from MyAnonymousDiary.entries.models import Entry
 
 
 class UserDetailView(LoginRequiredMixin, DetailView):

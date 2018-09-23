@@ -1,7 +1,10 @@
 .header {
+  margin-bottom: 30px;
+
   .logo {
     font-family: $logofont;
     font-size: 80px;
     line-height: 1em;
+    letter-spacing: -3px;
   }
 }

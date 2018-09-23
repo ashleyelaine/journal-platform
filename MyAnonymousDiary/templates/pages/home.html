@@ -6,23 +6,25 @@
 {% block content %}
   <div class="container">
     <div class="row">
-      <div class="col-lg-6">
+      <!-- <div class="col-lg-12">
         <p>Welcome to MyAnonymousDiary - an online, anonymous writing platform where you can share, gather, and organize your thoughts. Entries can be posted publically, or kept private just for yourself.</p> 
         <p>MAD strives to be a modern, elegant, and simple writing space for all.</p>
-        <p>The easiest way to get started is to simply create an account and get writing.</p>
-      </div>
-      <div class="col-lg-6">
+      </div> -->
+      <!-- <div class="col-lg-6">
           <h2>Updates</h2>
           {% for entry in updates_list %}
             {% include 'components/entry.html' %}
           {% endfor %}
-      </div>
+      </div> -->
     </div>
     
-    <hr>
-    <h2>Entries</h2>
+    <!-- <hr>
+    <h2>Entries</h2> -->
+    
+  </div>
+  <div class="entries">
     {% for entry in entry_list %}
       {% include 'components/entry.html' %}
     {% endfor %}
   </div>
-{% endblock content %}
+  {% endblock content %}

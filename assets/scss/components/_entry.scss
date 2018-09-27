@@ -1,16 +1,23 @@
 .entries {
-  padding-left: 1%;
+  padding: 10px 0 10px 1%;
   width: 100%;
+  // background: url('../../static/images/sky.jpg');
+  // background-size: cover;
 }
 
 .entry {
-  background: $ltgray;
+  background: rgba(255, 255, 255, 0.8);
   padding: 20px;
   width: calc(33.33333333% - 10px);
   transition: .8s opacity;
   margin-bottom: 10px;
   margin-right: 10px;
-  border-radius: 5px;
+  // border-radius: 5px;
+  // border: 1px solid $gray-500;
+
+  a {
+    color: $black;
+  }
 
   span {
     margin-right: 30px;

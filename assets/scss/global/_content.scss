@@ -1,5 +1,7 @@
 body {
   font-family: $textfont;
+  background: url('../../static/images/sky.jpg');
+  background-size: cover;
 }
 
 .container {

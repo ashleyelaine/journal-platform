@@ -2,11 +2,12 @@
   > .container {
     display: flex;
     justify-content: flex-end;
+    padding: 20px 0;
   } 
 
   .footer-logo {
     font-family: $logofont;
-    font-size: 81px;
+    font-size: 55px;
     display: inline-block;
     color: $black;
     line-height: 1em;

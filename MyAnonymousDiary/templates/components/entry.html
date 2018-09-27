@@ -1,6 +1,6 @@
 {% load tz %}
 
-<article class="entry">
+<article class="entry grid-item">
   <h3><a href="{% url 'entry_detail' pk=entry.pk %}">{{ entry.title }}</a></h3>
   <p>{{ entry.content|safe|truncatechars:255 }}</p>
   {% if entry.published_date %}

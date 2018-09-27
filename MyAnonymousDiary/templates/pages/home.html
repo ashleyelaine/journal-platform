@@ -23,8 +23,10 @@
     
   </div>
   <div class="entries">
-    {% for entry in entry_list %}
-      {% include 'components/entry.html' %}
-    {% endfor %}
+    <div class="grid">
+      {% for entry in entry_list %}
+        {% include 'components/entry.html' %}
+      {% endfor %}
+    </div>
   </div>
   {% endblock content %}

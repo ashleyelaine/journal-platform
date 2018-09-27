@@ -40,8 +40,7 @@ module.exports = {
       'node_modules/jquery/dist/jquery.js',
       'node_modules/popper.js/dist/umd/popper.js',
       'node_modules/bootstrap/dist/js/bootstrap.min.js',
-      'node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.js',
-      'node_modules/bootstrap-slider/dist/bootstrap-slider.js',
+      'node_modules/masonry-layout/dist/masonry.pkgd.min.js',
     ],
     scripts_src: [
       './assets/js/**/*.js',

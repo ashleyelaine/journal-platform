@@ -1,18 +1,10 @@
 {% load static i18n %}
 <header class="header navbar navbar-expand-md navbar-light">
-  <div class="container">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-    <!-- mobile nav btn -->
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  <a class="navbar-brand logo" href="{% url 'home' %}">MyAnonymousDiary</a>
 
-    <!-- logo/branding -->
-    <a class="navbar-brand logo" href="{% url 'home' %}">MyAnonymousDiary</a>
-
-    <!-- main navigation -->
-    {% include "components/navigation.html" %}
-
-  </div>
-
+  {% include "components/navigation.html" %}
 </header>

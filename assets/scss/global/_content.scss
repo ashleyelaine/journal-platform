@@ -1,11 +1,15 @@
 body {
   font-family: $textfont;
-  background: url('../../static/images/sky.jpg');
-  background-size: cover;
+  background: #bfe3f8;
 }
 
 .container {
   max-width: 1100px;
+}
+
+.maincontent {
+  margin-left: 23%;
+  height: 100vh;
 }
 
 .center {

@@ -1,6 +1,32 @@
 .navbar {
-  .nav-item {
-    font-size: 1.1rem;
-    font-family: $brandfont;
+  .navbar-collapse {
+    width: 100%;
+    align-items: flex-start;
+
+    .navbar-nav {
+      display: block;
+      margin-left: 0;
+      width: 100%;
+  
+      .nav-item {
+        font-size: 1.1rem;
+        font-family: $brandfont;
+        display: block;
+        padding: 0 10px;
+        text-align: right;
+
+        &.active {
+          background: #bfe3f8;
+
+          .nav-link {
+            color: $black;
+          }
+        }
+  
+        .nav-link {
+          padding: 5px 0;
+        }
+      }
+    }
   }
 }

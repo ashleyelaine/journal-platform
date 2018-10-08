@@ -2,6 +2,7 @@
   .navbar-collapse {
     width: 100%;
     align-items: flex-start;
+    background: $black;
 
     .navbar-nav {
       display: block;
@@ -16,15 +17,16 @@
         text-align: right;
 
         &.active {
-          background: #bfe3f8;
+          background: $black;
 
           .nav-link {
-            color: $black;
+            color: $white;
           }
         }
   
         .nav-link {
           padding: 5px 0;
+          color: $white;
         }
       }
     }

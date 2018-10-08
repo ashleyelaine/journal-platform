@@ -1,6 +1,6 @@
 body {
   font-family: $textfont;
-  background: #bfe3f8;
+  background: $white;
 }
 
 .container {
@@ -8,7 +8,7 @@ body {
 }
 
 .maincontent {
-  margin-left: 23%;
+  margin-left: 20%;
   height: 100vh;
 }
 

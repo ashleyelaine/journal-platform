@@ -1,13 +1,18 @@
 .btn {
-  border: 1px solid $black;
+  border: 1px solid transparent;
   border-radius: 0;
-  color: $black;
+  color: $white;
   letter-spacing: 1px;
   font-size: 18px;
+  background: $purple;
 
   &:hover {
-    // background: rgba(115, 176, 237, 0.8);
-    color: $orange;
-    border-color: $orange;
+    color: $purple;
+    background: transparent;
+    border-color: $purple;
   }
+}
+
+.secondaryAction {
+  margin-left: 10px;
 }

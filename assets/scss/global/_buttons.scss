@@ -1,0 +1,13 @@
+.btn {
+  border: 1px solid $black;
+  border-radius: 0;
+  color: $black;
+  letter-spacing: 1px;
+  font-size: 18px;
+
+  &:hover {
+    // background: rgba(115, 176, 237, 0.8);
+    color: $orange;
+    border-color: $orange;
+  }
+}

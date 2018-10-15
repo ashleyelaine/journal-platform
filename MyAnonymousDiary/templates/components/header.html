@@ -1,10 +1,12 @@
 {% load static i18n %}
 <header class="header navbar navbar-expand-md navbar-light">
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  <div class="container">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <a class="navbar-brand logo" href="{% url 'home' %}">MyAnonymousDiary</a>
+    <a class="navbar-brand logo" href="{% url 'home' %}">MyAnonymousDiary</a>
 
-  {% include "components/navigation.html" %}
+    {% include "components/navigation.html" %}
+  </div>
 </header>

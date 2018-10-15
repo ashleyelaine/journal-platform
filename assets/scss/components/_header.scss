@@ -1,21 +1,19 @@
 .header {
-  background: $white;
   position: fixed;
-  width: 20%;
-  height: 100vh;
-  left: 0;
-  flex-flow: column;
-  padding: 0;
+  width: 100%;
+  background: rgba(255,255,255,0.9);
+  z-index: 1;
+  box-shadow: 0 6px 11px -4px #999;
 
   .logo {
     font-family: $logofont;
     color: $black;
-    font-size: 60px;
+    font-size: 55px;
     line-height: 1em;
     letter-spacing: -3px;
-    padding: 20px 0;
+    padding: 5px 0;
     font-size: 30px;
-    font-size: 3.5vw;
+    font-size: 3.7vw;
     margin-right: 0;
   }
 }

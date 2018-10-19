@@ -10,8 +10,7 @@ body {
 }
 
 .maincontent {
-  padding-top: 110px;
-  padding-bottom: 100px;
+  padding-top: 79px;
 
   &.home-content {
     padding-top: 0;
@@ -25,7 +24,6 @@ body {
 .intro {
   position: relative;
   height: 100vh;
-  border-bottom: 2px solid $black;
 
   .intro-bg {
     position: absolute;
@@ -34,7 +32,7 @@ body {
     background-image: url('../images/journal-pick.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
   }
 
@@ -53,4 +51,11 @@ body {
     line-height: 1.2em;
     font-family: $brandfont;
   }
+}
+
+.box {
+  background: $transparentgray;
+  padding: 30px;
+  border-radius: 5px;
+  margin-top: 30px;
 }

@@ -7,7 +7,7 @@
 }
 
 .entry {
-  background: rgba(255, 255, 255, 0.7);
+  background: $transparentgray;
   padding: 20px;
   width: calc(33.33333333% - 10px);
   transition: .8s opacity;

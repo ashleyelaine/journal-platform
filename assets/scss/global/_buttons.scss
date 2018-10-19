@@ -2,14 +2,19 @@
   border: 1px solid transparent;
   border-radius: 0;
   color: $white;
-  letter-spacing: 1px;
+  letter-spacing: .5px;
   font-size: 18px;
-  background: $purple;
+  background: $teal;
 
   &:hover {
-    color: $purple;
+    color: $teal;
     background: transparent;
-    border-color: $purple;
+    border-color: $teal;
+  }
+
+  i {
+    font-size: .9rem;
+    margin-left: 5px;
   }
 }
 

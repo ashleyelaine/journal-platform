@@ -1,9 +1,9 @@
 .header {
   position: fixed;
   width: 100%;
-  background: rgba(255,255,255,0.9);
+  background: $transparentgray9;
   z-index: 1;
-  box-shadow: 0 6px 11px -4px #999;
+  box-shadow: 0 6px 11px -5px $gray;
 
   .logo {
     font-family: $logofont;
@@ -15,5 +15,5 @@
     font-size: 30px;
     font-size: 3.7vw;
     margin-right: 0;
-  }
+}
 }

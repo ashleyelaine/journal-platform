@@ -4,7 +4,7 @@ files:
 
 rules:
   class-name-format:
-    - 1
+    - 0
     -
       convention: hyphenatedbem
   nesting-depth:
@@ -20,6 +20,7 @@ rules:
   final-newline: 0
   no-trailing-whitespace: 0
   empty-line-between-blocks: 0
+  no-vendor-prefixes: 0
 
   # Currently disabled to allow for defining multiple fallback rules when
   # browsers don't support a given feature (viewport, for example).

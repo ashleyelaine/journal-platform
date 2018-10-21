@@ -4,30 +4,24 @@
 {% block title %}User: {{ object.username }}{% endblock %}
 
 {% block content %}
-<div class="container">
-
-  <div class="row">
-    <div class="col-sm-12">
-
+<section class="page-header">
+  <div class="container">
+    <div class="profile-image">
+      <img src="{{ object.profile_image.url }}">
+    </div>
+    <div class="profile-info">
       <h2>{{ object.username }}</h2>
-      {% if object.name %}
-        <p>{{ object.name }}</p>
+      {% if object == request.user %}
+        <div class="action-btns">
+          <a class="btn btn-primary" href="{% url 'users:update' %}" role="button">My Info</a>
+          <a class="btn btn-primary" href="{% url 'account_email' %}" role="button">E-Mail</a>
+          <a class="btn btn-primary" href="{% url 'new_entry' %}" >New Entry</a>
+        </div>
       {% endif %}
     </div>
   </div>
+</section>
 
-{% if object == request.user %}
-<!-- Action buttons -->
-<div class="row">
-
-  <div class="col-sm-12">
-    <a class="btn btn-primary" href="{% url 'users:update' %}" role="button">My Info</a>
-    <a class="btn btn-primary" href="{% url 'account_email' %}" role="button">E-Mail</a>
-    <!-- Your Stuff: Custom user template urls -->
-    <a class="btn btn-primary" href="{% url 'new_entry' %}" >New Entry</a>
-  </div>
-
-</div>
 <br>
 <!-- End Action buttons -->
 {% for entry in user_entries %}
@@ -39,7 +33,7 @@
     {% include 'components/entry.html' %}
 {% endfor %}
 
-{% endif %}
+
 
 <hr>
 <h2>PUBLISHED & PUBLIC</h2>

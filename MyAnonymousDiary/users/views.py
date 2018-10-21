@@ -33,7 +33,7 @@ class UserRedirectView(LoginRequiredMixin, RedirectView):
 
 class UserUpdateView(LoginRequiredMixin, UpdateView):
 
-    fields = ['name', 'timezone']
+    fields = ['username', 'profile_image', 'timezone']
 
     # we already imported User in the view code above, remember?
     model = User

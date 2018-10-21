@@ -19,6 +19,7 @@ class User(AbstractUser):
     name = models.CharField(_('Name of User'), blank=True, max_length=255)
     timezone = TimeZoneField(default='America/Chicago')
     profile_image = models.ImageField(upload_to=user_directory_path, blank=True, null=True)
+    intro = models.CharField(max_length=800, blank=True, null=True, verbose_name='Introduction', help_text='Introduce yourself with a short description if you\'d like.')
 
     def __str__(self):
         return self.username

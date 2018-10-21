@@ -4,24 +4,7 @@
 {% block title %}User: {{ object.username }}{% endblock %}
 
 {% block content %}
-<section class="page-header">
-  <div class="container">
-    <div class="profile-image">
-      <img src="{{ object.profile_image.url }}">
-    </div>
-    <div class="profile-info">
-      <h2>{{ object.username }}</h2>
-      <p>{{ object.intro }}</p>
-      {% if object == request.user %}
-        <div class="action-btns">
-          <a class="btn btn-primary" href="{% url 'users:update' %}" role="button">My Info</a>
-          <a class="btn btn-primary" href="{% url 'account_email' %}" role="button">E-Mail</a>
-          <a class="btn btn-primary" href="{% url 'new_entry' %}" >New Entry</a>
-        </div>
-      {% endif %}
-    </div>
-  </div>
-</section>
+{% include "users/includes/user_header.html" %}
 
 <br>
 <!-- End Action buttons -->

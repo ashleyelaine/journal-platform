@@ -4,25 +4,17 @@
 {% block title %}{{ user.username }}{% endblock %}
 
 {% block content %}
-<section class="intro">
-  <div class="intro-bg"></div>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8 offset-md-2">
-        <div class="box">
-          <h1>{{ user.username }}</h1>
-          <form class="form-horizontal" method="post" action="{% url 'users:update' %}">
-            {% csrf_token %}
-            {{ form|crispy }}
-            <div class="control-group">
-              <div class="controls">
-                <button type="submit" class="btn">Update</button>
-              </div>
-            </div>
-          </form>
-        </div>
+{% include "users/includes/user_header.html" %}
+<div class="container">
+  <h2>My Info</h2>
+  <form class="form-horizontal" method="post" action="{% url 'users:update' %}">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <div class="control-group">
+      <div class="controls">
+        <button type="submit" class="btn">Update</button>
       </div>
     </div>
-  </div>
-</section>
+  </form>
+</div>
 {% endblock %}

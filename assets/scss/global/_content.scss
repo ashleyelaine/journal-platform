@@ -40,7 +40,7 @@ body {
   .intro-text {
     position: absolute;
     text-align: center;
-    top: 45%;
+    top: 35%;
     width: 100%;
   }
 
@@ -75,7 +75,11 @@ body {
   }
 
   .profile-info {
-    padding: 20px 0 10px 30px;
+    padding: 20px 0 10px;
+
+    a {
+      color: $black;
+    }
   }
 
   .profile-image {
@@ -83,6 +87,7 @@ body {
     height: 200px;
     border-radius: 100px;
     border: 2px solid $white;
+    padding-right: 30px;
 
     img {
       max-width: 100%;

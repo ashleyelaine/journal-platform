@@ -1,15 +1,19 @@
 <section class="page-header user-header">
   <div class="container">
-    <div class="profile-image">
+    {% if user.profile_image %}
+      <div class="profile-image">
         <a href="{% url 'users:detail' request.user.username  %}">
           <img alt="Profile image of {{user.username }}" src="{{ user.profile_image.url }}">
         </a>
-    </div>
+      </div>
+    {% endif %}
     <div class="profile-info">
       <h1>
         <a href="{% url 'users:detail' request.user.username  %}">{{ user.username }}</a>
       </h1>
-      <p>{{ user.intro }}</p>
+      {% if user.intro %}
+        <p>{{ user.intro }}</p>
+      {% endif %}
       {% if user == request.user %}
         <div class="action-btns">
           <a class="btn btn-primary {% if 'update' in request.path %}active{% endif %}" href="{% url 'users:update' %}" role="button">My Info</a>

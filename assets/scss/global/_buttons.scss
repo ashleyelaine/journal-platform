@@ -7,9 +7,14 @@
   background: $teal;
 
   &:hover {
-    color: $teal;
+    color: $black;
     background: transparent;
-    border-color: $teal;
+    border-color: $black;
+  }
+
+  &.active {
+    background: $gray-700 !important;
+    border-color: $gray-700 !important;
   }
 
   i {

@@ -7,13 +7,12 @@ h1 {
 
   &.logo {
     font-family: $logofont;
-    font-family: $logofont;
-    font-size: 55px;
-    line-height: 1em;
+    font-size: 57px;
+    line-height: .9em;
     letter-spacing: -3px;
-    padding: 5px 0;
-    font-size: 5vw;
+    font-size: 70px;
     margin-right: 0;
+    margin-bottom: 0;
     font-weight: 400;
   }
 }
@@ -28,4 +27,5 @@ h2 {
 h3 {
   font-family: $brandfont;
   font-size: 24px;
+  margin-bottom: 15px;
 }
